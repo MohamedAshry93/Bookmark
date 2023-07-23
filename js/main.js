@@ -32,7 +32,7 @@ function addAndUpdateSite() {
             "please enter any character from a to z or A to Z and containing any number from 0 to 9 with min 3 & max 16"
         );
     } else {
-        alert("Please enter valid URL must start with www or http://");
+        alert("Please enter valid URL must start with http://www.");
     }
 }
 function displaySite() {
