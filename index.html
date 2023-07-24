@@ -38,7 +38,7 @@
                         class="form-control mb-4">
                     <label for="siteUrl" class="fw-semibold"><i class="fa-solid fa-link fw-semibold pe-2"></i>Site
                         URL</label>
-                    <input type="url" name="siteUrl" id="siteUrl" placeholder="Website URL" class="form-control">
+                    <input type="url" name="siteUrl" onclick="validateSiteUrl()" id="siteUrl" placeholder="Website URL" class="form-control">
                     <div class="text-center m-auto w-25 mt-3">
                         <button class="btn btn-danger px-5" onclick="addAndUpdateSite()" id="update">Submit</button>
                         <button class="btn btn-danger w-25 my-3" onclick="clearData()">Clear</button>

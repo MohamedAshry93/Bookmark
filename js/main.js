@@ -13,6 +13,10 @@ if (localStorage.getItem("sites") != null) {
 
 function addAndUpdateSite() {
     if (validateSiteName() && validateSiteUrl()) {
+        siteNameInp.classList.remove("is-invalid");
+        siteNameInp.classList.add("is-valid");
+        siteUrlInp.classList.remove("is-invalid");
+        siteUrlInp.classList.add("is-valid");
         var site = {
             name: siteNameInp.value,
             url: siteUrlInp.value,
@@ -28,11 +32,15 @@ function addAndUpdateSite() {
         displaySite();
         clearData();
     } else if (validateSiteName() == false) {
+        siteNameInp.classList.remove("is-valid");
+        siteNameInp.classList.add("is-invalid");
         alert(
             "please enter any character from a to z or A to Z and containing any number from 0 to 9 with min 3 & max 16"
         );
     } else {
-        alert("Please enter valid URL must start with http://www.");
+        siteUrlInp.classList.remove("is-valid");
+        siteUrlInp.classList.add("is-invalid");
+        alert("Please enter valid URL must start with https://www.");
     }
 }
 function displaySite() {
@@ -93,6 +101,6 @@ function validateSiteName() {
     return nameRegex.test(siteNameInp.value);
 }
 function validateSiteUrl() {
-    var siteRegex = /^(http:\/\/)(www\.)[a-zA-Z0-9]{3,}\.[a-z]{3}$/;
+    var siteRegex = /^(https:\/\/)(www\.)[a-zA-Z0-9]{3,}\.[a-z]{3}$/;
     return siteRegex.test(siteUrlInp.value);
 }
